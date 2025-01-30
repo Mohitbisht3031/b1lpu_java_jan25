@@ -12,7 +12,7 @@ public class Middle_man {
 
     // Authantication for card users
     public boolean authForCard(String name,String Pin){
-        if(user.getName().equalsIgnoreCase(name) && user.getPin().equalsIgnoreCase(pin))return true;
+        if(user.getName().equalsIgnoreCase(name) && user.getPin().equalsIgnoreCase(Pin))return true;
         return false;
     }
 
