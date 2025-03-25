@@ -11,12 +11,16 @@ public class swing {
         JButton jb = new JButton("Click");
 
         // the action listner for the button
-        jb.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e){
-                jl.setText("look i changed!");
-            }
-        } );
+        // jb.addActionListener(new ActionListener(){
+        //     @Override
+        //     public void actionPerformed(ActionEvent e){
+        //         jl.setText("look i changed!");
+        //     }
+        // } );
+        // same thing as above but using lamda expression
+        jb.addActionListener(e ->{
+            System.out.println("look i have changed!");
+        });
 
         JPanel jp = new JPanel();
         // to add the components in the jpanel

@@ -27,4 +27,19 @@ public class Q1 {
         if(arr[arr.length-1] != arr[arr.length-2])return arr[arr.length-1];
         return ' ';
     }
+
+    char uniqueChar3(char[] arr){
+        int freq[] = new int[26];
+
+        for(int i = 0;i<arr.length;i++){
+            int ind = (int)(arr[i] - 'a');
+            freq[ind]++;
+        }
+        for(int i = 0 ;i<26;i++){
+            if(freq[i] == 1){
+                return (char)('a'+i);
+            }
+        }
+        return ' ';
+    }
 }
