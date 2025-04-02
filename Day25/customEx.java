@@ -12,7 +12,7 @@ public class customEx {
         try{int d =  10/0;
             return d;
         }catch(Exception ex){
-            throw ex;
+            throw new customException(ex.getMessage());
         }
     }
 
