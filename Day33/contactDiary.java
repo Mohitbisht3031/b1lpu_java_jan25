@@ -1,7 +1,9 @@
 package Day33;
 
+import java.io.EOFException;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Scanner;
@@ -53,7 +55,25 @@ public class contactDiary {
 
     // implement this
     private static void read(String name){
-
+        String fn = name+".txt";
+        Scanner sc = new Scanner(System.in);
+        String person = sc.nextLine();
+        sc.close();
+        try(ObjectInputStream ois = new ObjectInputStream(fn)){
+          try{
+            while(true){
+                Contact obj = (Contact)ois.readObject();
+                if(obj.Name.equalsIgnoreCase(person)){
+                    System.out.println(obj.toString());
+                    break;
+                }
+            }
+          } catch(EOFException e){
+            System.err.println(e);
+          } 
+        }catch(Exception ex){
+            System.err.println(ex);
+        }
     }
 
     private static void delete(String name){
